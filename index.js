@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { ActivityType } = require("discord.js");
 require('dotenv').config();
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -25,7 +26,10 @@ for (const folder of commandFolders) {
 }
 
 client.once(Events.ClientReady, () => {
-	console.log('joyita');
+	console.log('joyita')
+	client.user.setActivity("aigis x yukari hot steamy sex",{
+		type: ActivityType.Watching
+	});
 });
 
 client.on(Events.InteractionCreate, async interaction => {
