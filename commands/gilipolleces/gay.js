@@ -1,12 +1,13 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
+    cooldown: 10,
     data: new SlashCommandBuilder()
-    .setName('aigussy')
-    .setDescription('aigussy 🙏'),
+    .setName('gay')
+    .setDescription('my fucking god ❗⁉'),
     async execute(interaction) {
         await interaction.reply({
-            files: ['images/aigussyfr.png']
+            files: ['images/thesebitchesgayfr.png']
         });
     }
 };
