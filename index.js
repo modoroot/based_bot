@@ -1,11 +1,16 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const wait = require('node:timers/promises').setTimeout;
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const { ActivityType } = require("discord.js");
+const { Client, Collection, Events, GatewayIntentBits, IntentsBitField, ActivityType } = require('discord.js');
 require('dotenv').config();
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ 
+	intents: [
+		GatewayIntentBits.Guilds,
+		IntentsBitField.Flags.GuildMembers,
+		IntentsBitField.Flags.GuildMessages,
+		IntentsBitField.Flags.MessageContent
+	] 
+});
 
 client.cooldowns = new Collection();
 client.commands = new Collection();
@@ -31,6 +36,11 @@ client.once(Events.ClientReady, () => {
 	client.user.setActivity("aigis x yukari hot steamy sex",{
 		type: ActivityType.Watching
 	});
+});
+
+client.on('messageCreate', async message => {
+	if (!message.content.match(/rub[eé]n/i)) return;
+    message.channel.send('<@536135621438078978> juega persona');
 });
 
 client.on(Events.InteractionCreate, async interaction => {
