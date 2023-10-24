@@ -43,6 +43,17 @@ client.on('messageCreate', async message => {
     message.channel.send('<@536135621438078978> juega persona');
 });
 
+
+client.on('messageCreate', function(message) {
+    if (message.content === "persona 5 ruben") { 
+		console.log('ruben nemesis initialized 🔥')
+        var interval = setInterval (function () {
+            message.channel.send('<@536135621438078978> juega persona')
+            .catch(console.error);
+        }, 1 * 1800000); 
+    }
+});
+
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 	
