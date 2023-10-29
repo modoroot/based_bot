@@ -7,7 +7,7 @@ module.exports = {
     .setDescription('kiryu bing chilleando 🙏'),
     async execute(interaction) {
         await interaction.reply({
-            content: `bing chillin 冰冷 :bangbang: :bangbang: :flag_cn:`,
+            content: `bing chilling :bangbang: :bangbang: :flag_cn:`,
             files: ['images/bingchillin.mp4']
         });
     }
