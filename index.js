@@ -56,7 +56,11 @@ client.on('messageCreate', function(message) {
 
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
-	
+	const user = await client.users.fetch(interaction.user.id);
+
+	if (user.id === '536135621438078978')
+		return interaction.reply({ content: '✋ CUCKED ‼️. 🗣️ juega persona 5', ephemeral: false });
+
 	const command = client.commands.get(interaction.commandName);
 
 	if (!command) return;
@@ -80,6 +84,7 @@ client.on(Events.InteractionCreate, async interaction => {
 			return interaction.reply({ content: `relaja notas unos <t:${expiredTimestamp}:R> para usar \`${command.data.name}\`.`, ephemeral: true });
 		}
 	}
+		
 
 	timestamps.set(interaction.user.id, now);
 	setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
