@@ -8,7 +8,7 @@ module.exports = {
     async execute(interaction) {
         await interaction.reply({
             content: `bing chilling :bangbang: :bangbang: :flag_cn:`,
-            files: ['images/bingchillin.mp4']
+            files: ['images/bingchilling.mp4']
         });
     }
 };
