@@ -7,7 +7,7 @@ module.exports = {
     .setDescription('h.e'),
     async execute(interaction) {
         await interaction.reply({
-            files: ['images/failedratio.mov']
+            files: ['images/failedratio.mp4']
         });
     }
 };

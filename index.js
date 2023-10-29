@@ -3,13 +3,13 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, IntentsBitField, ActivityType } = require('discord.js');
 require('dotenv').config();
 
-const client = new Client({ 
+const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
 		IntentsBitField.Flags.GuildMembers,
 		IntentsBitField.Flags.GuildMessages,
 		IntentsBitField.Flags.MessageContent
-	] 
+	]
 });
 
 client.cooldowns = new Collection();
@@ -33,25 +33,31 @@ for (const folder of commandFolders) {
 
 client.once(Events.ClientReady, () => {
 	console.log('joyita')
-	client.user.setActivity("aigis x yukari hot steamy sex",{
+	client.user.setActivity("aigis x yukari hot steamy sex", {
 		type: ActivityType.Watching
 	});
 });
 
 client.on('messageCreate', async message => {
 	if (!message.content.match(/rub[eé]n/i)) return;
-    message.channel.send('<@536135621438078978> juega persona');
+	message.channel.send('<@536135621438078978> juega persona');
 });
 
 
-client.on('messageCreate', function(message) {
-    if (message.content === "persona 5 ruben") { 
-		console.log('ruben nemesis initialized 🔥')
-        var interval = setInterval (function () {
-            message.channel.send('<@536135621438078978> juega persona')
-            .catch(console.error);
-        }, 1 * 1800000); 
-    }
+client.on('messageCreate', function (message) {
+	if (message.content === "persona 5 ruben") {
+		console.log('ruben nemesis initialized 🔥');
+		var interval = setInterval(function () {
+			message.channel.send('<@536135621438078978> juega persona')
+				.catch(console.error);
+				
+			const user = client.users.cache.get('536135621438078978');
+
+			if (user) 
+				user.send('<:nanjoass:1166481427827802243> juega persona 5');
+			
+		}, 1 * 1800000);
+	}
 });
 
 client.on(Events.InteractionCreate, async interaction => {
@@ -84,7 +90,7 @@ client.on(Events.InteractionCreate, async interaction => {
 			return interaction.reply({ content: `relaja notas unos <t:${expiredTimestamp}:R> para usar \`${command.data.name}\`.`, ephemeral: true });
 		}
 	}
-		
+
 
 	timestamps.set(interaction.user.id, now);
 	setTimeout(() => timestamps.delete(interaction.user.id), cooldownAmount);
