@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
     cooldown: 10,
     data: new SlashCommandBuilder()
-    .setName('samurai')
+    .setName('samuraismt')
     .setDescription('mejor que sonic (ni lo he empezado)'),
     async execute(interaction) {
         await interaction.reply({
