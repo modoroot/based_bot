@@ -51,10 +51,10 @@ client.on('messageCreate', function (message) {
 			message.channel.send('<@536135621438078978> juega persona')
 				.catch(console.error);
 				
-			const user = client.users.cache.get('536135621438078978');
+			// const user = client.users.cache.get('536135621438078978');
 
-			if (user) 
-				user.send('<:nanjoass:1166481427827802243> juega persona 5');
+			// if (user) 
+			// 	user.send('<:nanjoass:1166481427827802243> juega persona 5');
 			
 		}, 1 * 1800000);
 	}
