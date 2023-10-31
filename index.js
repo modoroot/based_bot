@@ -16,7 +16,7 @@ client.cooldowns = new Collection();
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
-const i = 0;
+let i = 0;
 
 
 for (const folder of commandFolders) {
@@ -44,7 +44,6 @@ client.on('messageCreate', async message => {
 	if (!message.content.match(/rub[eé]n/i)) return;
 	message.channel.send('<@536135621438078978> juega persona');
 });
-
 
 client.on('messageCreate', function (message) {
 	if (message.content === "persona 5 ruben") {
