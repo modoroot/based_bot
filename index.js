@@ -55,7 +55,7 @@ client.on('messageCreate', function (message) {
 				message.channel.send('DISELO BIEN CLARO :speaking_head: :bangbang: <:jacksexohd:929268845112332288>').catch(console.error);
 				i = 0;
 			}
-		}, 1 * 1800000);
+		}, 1 * 5000);
 	}
 });
 
