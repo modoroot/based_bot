@@ -56,7 +56,7 @@ client.on('messageCreate', function (message) {
 });
 
 
-cron.schedule('0 20 * * *', () => {
+cron.schedule('0 19 * * *', () => {
 	  const channel = client.channels.cache.get('976807836661202987');
 	  if (channel) {
 		channel.send('🗣️ 📢 ernesto masón');
