@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const cron = require('node-cron');
 const { Client, Collection, Events, GatewayIntentBits, IntentsBitField, ActivityType } = require('discord.js');
 require('dotenv').config();
 
@@ -49,16 +50,18 @@ client.on('messageCreate', function (message) {
 		console.log('ruben nemesis initialized 🔥');
 		var interval = setInterval(function () {
 			message.channel.send('<@536135621438078978> juega persona')
-				.catch(console.error);
-				
-			// const user = client.users.cache.get('536135621438078978');
-
-			// if (user) 
-			// 	user.send('<:nanjoass:1166481427827802243> juega persona 5');
-			
+				.catch(console.error);	
 		}, 1 * 1800000);
 	}
 });
+
+
+cron.schedule('0 20 * * *', () => {
+	  const channel = client.channels.cache.get('976807836661202987');
+	  if (channel) {
+		channel.send('🗣️ 📢 ernesto masón');
+	  }
+  });
 
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
