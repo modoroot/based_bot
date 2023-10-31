@@ -3,7 +3,6 @@ const path = require('node:path');
 const cron = require('node-cron');
 const { Client, Collection, Events, GatewayIntentBits, IntentsBitField, ActivityType } = require('discord.js');
 require('dotenv').config();
-
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
@@ -17,6 +16,8 @@ client.cooldowns = new Collection();
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
+const i = 0;
+
 
 for (const folder of commandFolders) {
 	const commandsPath = path.join(foldersPath, folder);
@@ -49,19 +50,23 @@ client.on('messageCreate', function (message) {
 	if (message.content === "persona 5 ruben") {
 		console.log('ruben nemesis initialized 🔥');
 		var interval = setInterval(function () {
-			message.channel.send('<@536135621438078978> juega persona')
-				.catch(console.error);	
+			message.channel.send('<@536135621438078978> juega persona').catch(console.error);
+			i++;
+			if (i == 5){
+				message.channel.send('DISELO BIEN CLARO :speaking_head: :bangbang: <:jacksexohd:929268845112332288>').catch(console.error);
+				i = 0;
+			}
 		}, 1 * 1800000);
 	}
 });
 
 
 cron.schedule('0 19 * * *', () => {
-	  const channel = client.channels.cache.get('976807836661202987');
-	  if (channel) {
+	const channel = client.channels.cache.get('976807836661202987');
+	if (channel) {
 		channel.send('🗣️ 📢 ernesto masón');
-	  }
-  });
+	}
+});
 
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
