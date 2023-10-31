@@ -52,10 +52,10 @@ client.on('messageCreate', function (message) {
 			message.channel.send('<@536135621438078978> juega persona').catch(console.error);
 			i++;
 			if (i == 5){
-				message.channel.send('DISELO BIEN CLARO :speaking_head: :bangbang: <:jacksexohd:929268845112332288>').catch(console.error);
+				message.channel.send('DISELO BIEN CLARO :speaking_head: :bangbang: <:jacksexohd:929268845112332288> ').catch(console.error);
 				i = 0;
 			}
-		}, 1 * 5000);
+		}, 1 * 1800000);
 	}
 });
 
