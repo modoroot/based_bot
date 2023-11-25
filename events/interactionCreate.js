@@ -1,5 +1,4 @@
-const { Collection } = require("discord.js");
-const { Events } = require('discord.js');
+const { Collection, Events } = require("discord.js");
 const { cooldowns } = client;
 
 if (!cooldowns.has(command.data.name)) {
