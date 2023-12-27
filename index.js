@@ -60,10 +60,13 @@ client.on('messageCreate', function (message) {
 });
 
 
+const nombres = ['alva', 'ernesto', 'alex', 'maicro', 'ruben', 'lucia', 'manuel'];
+
 cron.schedule('0 19 * * *', () => {
 	const channel = client.channels.cache.get('976807836661202987');
 	if (channel) {
-		channel.send('🗣️ 📢 ernesto masón');
+		const nombreAleatorio = nombres[Math.floor(Math.random() * nombres.length)];
+		channel.send(`🗣️ 📢 ${nombreAleatorio} masón`);
 	}
 });
 
