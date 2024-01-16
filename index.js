@@ -75,7 +75,7 @@ client.on(Events.InteractionCreate, async interaction => {
 	const user = await client.users.fetch(interaction.user.id);
 
 	if (user.id === '536135621438078978')
-		return interaction.reply({ content: '✋ COCKBLOCKED ‼️. 🗣️ juega persona 5 strikers ', ephemeral: false });
+		return interaction.reply({ content: '✋ COCKBLOCKED ‼️. 🗣️ juega persona 4 golden ', ephemeral: false });
 
 	const command = client.commands.get(interaction.commandName);
 
