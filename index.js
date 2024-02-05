@@ -45,10 +45,13 @@ client.on('messageCreate', async message => {
 	message.channel.send('<@536135621438078978> juega persona');
 });
 
-cron.schedule('45 10 * * *', () => {
-	const channel = client.channels.cache.get('976807836661202987');
-	const attachment = new Discord.MessageAttachment('images/good_morning_aigussy.mov');
-	channel.send(attachment);
+cron.schedule('30 7 * * *', () => {
+    const channel = client.channels.cache.get('976807836661202987');
+    if (channel) {
+		channel.send(`[aigis pq no existes](https://cdn.discordapp.com/attachments/287266770816073728/1204024362114617344/good_morning_aigussy.mov?ex=65d33a11&is=65c0c511&hm=a3663aeb376a79f12597c53fc93c469cb8990f339d02f837fd3dae38b66650c2&)`);
+    } else {
+        console.error('no se pudo encontrar el canal de destino');
+    }
 });
 
 client.on('messageCreate', function (message) {
