@@ -45,6 +45,12 @@ client.on('messageCreate', async message => {
 	message.channel.send('<@536135621438078978> juega persona');
 });
 
+cron.schedule('45 10 * * *', () => {
+	const channel = client.channels.cache.get('976807836661202987');
+	const attachment = new Discord.MessageAttachment('images/good_morning_aigussy.mov');
+	channel.send(attachment);
+});
+
 client.on('messageCreate', function (message) {
 	if (message.content === "persona 5 ruben") {
 		console.log('ruben nemesis initialized 🔥');
