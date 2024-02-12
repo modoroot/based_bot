@@ -78,14 +78,9 @@ client.on('messageCreate', function (message) {
 });
 
 client.on('messageCreate', (message) => {
-	// Verificar si el mensaje proviene de un usuario y no del bot
 	if (!message.author.bot) {
-	  // Generar un número aleatorio entre 0 y 1
 	  const random = Math.random();
-  
-	  // Comprobar si el número aleatorio está dentro del 5% de probabilidad
 	  if (random <= 0.05) {
-		// Responder con "hola"
 		message.reply('[boo-womp](https://cdn.discordapp.com/attachments/287266770816073728/1206739363246116874/x2mate.com-Spongebob_Boo-womp_Sound_Effect.mp4?ex=65dd1a9c&is=65caa59c&hm=02f74587bdec6f9c3d7fddf7e356a757d8ff8bd1272b5d9ef4ca8eb800e53675&)');
 	  }
 	}
