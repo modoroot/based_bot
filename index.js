@@ -54,7 +54,7 @@ cron.schedule('30 7 * * *', () => {
     }
 });
 
-cron.schedule('59 23 * * 7', () => {
+cron.schedule('59 22 * * 7', () => {
     const channel = client.channels.cache.get('976807836661202987');
     if (channel) {
 		channel.send(`[ahh](https://cdn.discordapp.com/attachments/287266770816073728/1204955090708996106/thecycle.mp4?ex=65d69ce0&is=65c427e0&hm=ad697e529ef4fc30363fe0b1cb07eb341656c6853260225fd656f9e5694dd46c&)`);
