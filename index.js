@@ -35,7 +35,7 @@ for (const folder of commandFolders) {
 
 client.once(Events.ClientReady, () => {
 	console.log('joyita')
-	client.user.setActivity("aigis x yukari hot steamy sex", {
+	client.user.setActivity("aigis beats the shit out of you ASMR [F4A]", {
 		type: ActivityType.Watching
 	});
 });
