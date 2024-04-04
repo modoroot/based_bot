@@ -45,7 +45,7 @@ client.on('messageCreate', async message => {
 	message.channel.send('<@536135621438078978> juega persona');
 });
 
-cron.schedule('30 7 * * *', () => {
+cron.schedule('30 6 * * *', () => {
     const channel = client.channels.cache.get('976807836661202987');
     if (channel) {
 		channel.send(`[aigis pq no existes](https://cdn.discordapp.com/attachments/287266770816073728/1204024362114617344/good_morning_aigussy.mov?ex=65d33a11&is=65c0c511&hm=a3663aeb376a79f12597c53fc93c469cb8990f339d02f837fd3dae38b66650c2&)`);
@@ -84,10 +84,17 @@ client.on('messageCreate', (message) => {
 		message.reply('[boo-womp](https://cdn.discordapp.com/attachments/287266770816073728/1206739363246116874/x2mate.com-Spongebob_Boo-womp_Sound_Effect.mp4?ex=65dd1a9c&is=65caa59c&hm=02f74587bdec6f9c3d7fddf7e356a757d8ff8bd1272b5d9ef4ca8eb800e53675&)');
 	  }
   });
+  client.on('messageCreate', (message) => {
+	const random = Math.random();
+	if (random < 5) {
+	  console.log(random)
+	  message.reply('[weeee-wuuuu](https://cdn.discordapp.com/attachments/287266770816073728/1225538421632532480/SpongeBob_disappointed_sound_effect.mp4?ex=66217e99&is=660f0999&hm=ceaae3d398c8fe4f0939bdd3270e73d62cd2718e429269c8c6c65cf56acf2f3f&)');
+	}
+});
 
 const nombres = ['alva', 'ernesto', 'alex', 'maicro', 'ruben', 'lucia', 'manuel'];
 
-cron.schedule('0 19 * * *', () => {
+cron.schedule('0 18 * * *', () => {
 	const channel = client.channels.cache.get('976807836661202987');
 	if (channel) {
 		const nombreAleatorio = nombres[Math.floor(Math.random() * nombres.length)];
