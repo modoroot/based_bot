@@ -86,7 +86,7 @@ client.on('messageCreate', (message) => {
   });
   client.on('messageCreate', (message) => {
 	const random = Math.random();
-	if (random < 5) {
+	if (random < 0.001) {
 	  console.log(random)
 	  message.reply('[weeee-wuuuu](https://cdn.discordapp.com/attachments/287266770816073728/1225538421632532480/SpongeBob_disappointed_sound_effect.mp4?ex=66217e99&is=660f0999&hm=ceaae3d398c8fe4f0939bdd3270e73d62cd2718e429269c8c6c65cf56acf2f3f&)');
 	}
