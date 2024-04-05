@@ -45,6 +45,11 @@ client.on('messageCreate', async message => {
 	message.channel.send('<@536135621438078978> juega persona');
 });
 
+client.on('messageCreate', async message => {
+	if (!message.content.match("oh yagami")) return;
+	message.channel.send(`[oh](https://cdn.discordapp.com/attachments/287266770816073728/1224821034364964995/Yagami_sucks_off_Kaito.mp4?ex=661ee27a&is=660c6d7a&hm=003eabab3504ec8e142d5a3317fb7c203d1ae73300a3be08b795e28778ec56c0&)`);
+});
+
 cron.schedule('30 6 * * *', () => {
     const channel = client.channels.cache.get('976807836661202987');
     if (channel) {
