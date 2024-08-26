@@ -68,6 +68,15 @@ cron.schedule('59 22 * * 7', () => {
     }
 });
 
+cron.schedule('0 6 * * *', () => {
+    const channel = client.channels.cache.get('976807836661202987');
+    if (channel) {
+		channel.send(`[RUBEN P4 YAAAAAAAAAAAAAAAAAAAAAA](https://cdn.discordapp.com/attachments/287266770816073728/1277644911398883380/p4ya.png?ex=66cdeb0c&is=66cc998c&hm=62a3bded6f343980dd72f4d5f2d573a60ff4f27d80286c5c620d2d1eab94cbbc&)`);
+    } else {
+        console.error('no se pudo encontrar el canal de destino');
+    }
+});
+
 client.on('messageCreate', function (message) {
 	if (message.content === "persona 5 ruben") {
 		console.log('ruben nemesis initialized 🔥');
