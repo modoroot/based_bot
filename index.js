@@ -115,6 +115,17 @@ client.on('messageCreate', (message) => {
 	}
 });
 
+client.on('messageCreate', (message) => {
+    const targetUserId = '309058510610759690';
+    if (message.author.id === targetUserId) {
+        const random = Math.random();
+        if (random < 0.05) {
+            console.log(random);
+            message.reply('https://cdn.discordapp.com/attachments/1247185053017178162/1278703542793670738/Ae5060WhLO399Y_k.mp4?ex=66d5b979&is=66d467f9&hm=c004d5a96c0dd289c366f077072d49a5ba3fbcbdbc22d3d21bf9f1e72b2e6bf0&');
+        }
+    }
+});
+
 const nombres = ['alva', 'ernesto', 'alex', 'maicro', 'ruben', 'lucia', 'manuel'];
 
 cron.schedule('0 18 * * *', () => {
